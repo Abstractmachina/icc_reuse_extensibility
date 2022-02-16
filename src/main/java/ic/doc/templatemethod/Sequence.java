@@ -2,7 +2,7 @@ package ic.doc.templatemethod;
 
 import java.util.Iterator;
 
-public abstract class Sequencer implements Iterable<Integer> {
+public abstract class Sequence implements Iterable<Integer> {
 
   public int term(int i) {
     if (i < 0) {
@@ -11,10 +11,10 @@ public abstract class Sequencer implements Iterable<Integer> {
     if (i < 2) {
       return 1;
     }
-    return sequence_term();
+    return sequence_term(i);
   }
 
-  protected abstract int sequence_term();
+  public abstract int sequence_term(int i);
 
   public Iterator<Integer> iterator() {
     return new SequenceIterator();
