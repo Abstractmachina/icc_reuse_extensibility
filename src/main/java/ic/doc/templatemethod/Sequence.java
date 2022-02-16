@@ -8,9 +8,6 @@ public abstract class Sequence implements Iterable<Integer> {
     if (i < 0) {
       throw new IllegalArgumentException("Not defined for indices < 0");
     }
-    if (i < 2) {
-      return 1;
-    }
     return sequence_term(i);
   }
 
