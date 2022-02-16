@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Sequence implements Iterable<Integer> {
 
-  final private SequenceType seqType;
+  private final SequenceType seqType;
 
   Sequence(SequenceType st) {
     seqType = st;
