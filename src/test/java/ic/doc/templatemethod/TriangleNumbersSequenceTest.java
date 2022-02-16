@@ -19,7 +19,7 @@ public class TriangleNumbersSequenceTest {
   }
 
   @Test
-  public void definesSubsequentTermsEqualToNPlusOneTimesNPlusTwoDivTwo() {
+  public void definesSubsequentTermsEqualToNplusOneTimesNplusTwoDivTwo() {
 
     assertThat(seq.term(2), is(6));
     assertThat(seq.term(3), is(10));

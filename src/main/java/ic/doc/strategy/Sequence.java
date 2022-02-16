@@ -4,11 +4,12 @@ import java.util.Iterator;
 
 public class Sequence implements Iterable<Integer> {
 
-  private SequenceType seqType;
+  final private SequenceType seqType;
 
   Sequence(SequenceType st) {
     seqType = st;
   }
+
   public int term(int i) {
     if (i < 0) {
       throw new IllegalArgumentException("Not defined for indices < 0");
