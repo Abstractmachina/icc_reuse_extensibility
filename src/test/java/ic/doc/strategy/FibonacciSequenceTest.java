@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class FibonacciSequenceTest {
 
-  SequenceType fibo = new FibonacciSequence();
+  final SequenceType fibo = new FibonacciSequence();
   final Sequence sequence = new Sequence(fibo);
 
   @Test

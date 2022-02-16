@@ -6,32 +6,33 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.fail;
 
-import ic.doc.templatemethod.TriangleNumbersSequence;
+
 import org.junit.Test;
 
 public class TriangleNumbersSequenceTest {
 
-  final ic.doc.templatemethod.TriangleNumbersSequence seq = new TriangleNumbersSequence();
+  final SequenceType tri = new TriangleNumbersSequence();
+  final Sequence sequence = new Sequence(tri);
 
   @Test
   public void definesFirstTermToBeOne() {
 
-    assertThat(seq.term(0), is(1));
+    assertThat(sequence.term(0), is(1));
   }
 
   @Test
   public void definesSubsequentTermsEqualToNPlusOneTimesNPlusTwoDivTwo() {
 
-    assertThat(seq.term(2), is(6));
-    assertThat(seq.term(3), is(10));
-    assertThat(seq.term(4), is(15));
+    assertThat(sequence.term(2), is(6));
+    assertThat(sequence.term(3), is(10));
+    assertThat(sequence.term(4), is(15));
   }
 
   @Test
   public void isUndefinedForNegativeIndices() {
 
     try {
-      seq.term(-1);
+      sequence.term(-1);
       fail("should have thrown exception");
     } catch (IllegalArgumentException e) {
       assertThat(e.getMessage(), containsString("Not defined for indices < 0"));
@@ -40,6 +41,6 @@ public class TriangleNumbersSequenceTest {
 
   @Test
   public void canBeIteratedThrough() {
-    assertThat(seq, beginsWith(1, 3, 6, 10, 15));
+    assertThat(sequence, beginsWith(1, 3, 6, 10, 15));
   }
 }
