@@ -3,15 +3,17 @@ package ic.doc.strategy;
 import java.util.Iterator;
 
 public class Sequence implements Iterable<Integer> {
+
+  private SequenceType seqType;
+
+  Sequence(SequenceType st) {
+    seqType = st;
+  }
   public int term(int i) {
     if (i < 0) {
       throw new IllegalArgumentException("Not defined for indices < 0");
     }
-    return calculateTerm();
-    if (i < 2) {
-      return 1;
-    }
-    return term(i - 1) + term(i - 2);
+    return seqType.term(i);
   }
 
   public Iterator<Integer> iterator() {

@@ -10,7 +10,8 @@ import org.junit.Test;
 
 public class FibonacciSequenceTest {
 
-  final FibonacciSequence sequence = new FibonacciSequence();
+  SequenceType fibo = new FibonacciSequence();
+  final Sequence sequence = new Sequence(fibo);
 
   @Test
   public void definesFirstTwoTermsToBeOne() {
